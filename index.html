@@ -43,182 +43,182 @@
   var NavTopbarMenu = React.createClass({
     render: function () {
       return (
-      <nav className={React.addons.classSet({
-        'nav-topbar-menu': true,
+        <nav className={React.addons.classSet({
+          'nav-topbar-menu': true,
+          'ease-out-quart':  true,
+          'is-shown':        this.props.shown
+        })}>
+        <div className="nav-topbar-menu-item">Events</div>
+        <div className="nav-topbar-menu-item">Stations</div>
+        <div className="nav-topbar-menu-item">People</div>
+      </nav>
+      );
+    }
+  });
+
+  var OrgTopbarMenu = React.createClass({
+    render: function () {
+      return (
+      <div
+      className={React.addons.classSet({
+        'org-topbar-menu': true,
         'ease-out-quart':  true,
         'is-shown':        this.props.shown
-      })}>
-      <div className="nav-topbar-menu-item">Events</div>
-      <div className="nav-topbar-menu-item">Stations</div>
-      <div className="nav-topbar-menu-item">People</div>
-    </nav>
+      })}
+      style={{cursor: 'pointer'}}
+      onClick={this.handleClick}>
+      <section>
+        <div className="org-topbar-menu-item">
+          <i className="fa fa-lg fa-check-square-o"></i> Check-ins
+        </div>
+        <div className="org-topbar-menu-item">
+          <i className="fa fa-lg fa-check-square-o"></i> Accounts
+        </div>
+        <div className="org-topbar-menu-item">
+          <i className="fa fa-lg fa-check-square-o"></i> People
+        </div>
+        <div className="org-topbar-menu-item">
+          <i className="fa fa-lg fa-check-square-o"></i> Registrations
+        </div>
+      </section>
+
+      <section style={{ borderTop: '1px solid #333' }}>
+        <div className="org-topbar-menu-item">First Church of Carlsbad</div>
+        <div className="org-topbar-menu-item">Ministry Centered Technology</div>
+      </section>
+
+      <section style={{ borderTop: '1px solid #333' }}>
+        <div className="org-topbar-menu-item">Help</div>
+        <div className="org-topbar-menu-item">Logout</div>
+      </section>
+    </div>
     );
+  },
+  handleClick: function () {
+    this.props.onSelectApp()
   }
-});
+  });
 
-var OrgTopbarMenu = React.createClass({
-  render: function () {
-    return (
-    <div
-    className={React.addons.classSet({
-      'org-topbar-menu': true,
-      'ease-out-quart':  true,
-      'is-shown':        this.props.shown
-    })}
-    style={{cursor: 'pointer'}}
-    onClick={this.handleClick}>
-    <section>
-      <div className="org-topbar-menu-item">
-        <i className="fa fa-lg fa-check-square-o"></i> Check-ins
-      </div>
-      <div className="org-topbar-menu-item">
-        <i className="fa fa-lg fa-check-square-o"></i> Accounts
-      </div>
-      <div className="org-topbar-menu-item">
-        <i className="fa fa-lg fa-check-square-o"></i> People
-      </div>
-      <div className="org-topbar-menu-item">
-        <i className="fa fa-lg fa-check-square-o"></i> Registrations
-      </div>
-    </section>
+  var Topbar = React.createClass({
+    getInitialState: function () {
+      return {
+        AppMenuShown: false,
+        NavMenuShown: false,
+        OrgMenuShown: false
+      }
+    },
 
-    <section style={{ borderTop: '1px solid #333' }}>
-      <div className="org-topbar-menu-item">First Church of Carlsbad</div>
-      <div className="org-topbar-menu-item">Ministry Centered Technology</div>
-    </section>
+    render: function () {
+      return (
+      <div className="container">
+        <div className="topbar">
+          <div
+          className=  "org-topbar-btn"
+          onClick=    {this.handleOrgTopbarBtnClick}>
+          <i className="fa fa-lg fa-check-square-o"></i>
+        </div>
 
-    <section style={{ borderTop: '1px solid #333' }}>
-      <div className="org-topbar-menu-item">Help</div>
-      <div className="org-topbar-menu-item">Logout</div>
-    </section>
+        <div
+        className="nav-topbar-btn"
+        onClick=  {this.handleNavTopbarBtnClick}>
+        Events <i className="fa fa-sort-desc">
+        </i></div>
+
+        <div
+        className="app-topbar-btn"
+        onClick=  {this.handleAppTopbarBtnClick}>
+        <i className="fa fa-lg fa-ellipsis-h"></i>
+      </div>
+
+      <AppTopbarMenu shown={this.state.AppMenuShown} />
+      <OrgTopbarMenu
+      shown={this.state.OrgMenuShown}
+      onSelectApp={this.handleAppChange} />
+      <NavTopbarMenu shown={this.state.NavMenuShown} />
+
+      <section style={{
+        color: '#666',
+        marginTop: '0',
+        padding: '20px',
+        paddingTop: '70px'
+      }}>
+        <h3>Mobile Topbar Prototype</h3>
+        <p>
+          The goal of this prototype is to determine the 'shape' of the mobile
+          Topbar. Does this design cover the needs of our current and future
+          interfaces apps.
+        </p>
+        <p>
+          <em>(Interactions are all still very crude)</em>
+        </p>
+
+        <hr />
+
+        <h3>Org/User Menu (left) </h3>
+
+        <p>
+          This menu is concerned with <strong>everything outside of the current
+          app context</strong>. When collapsed, it shows the icon of the current
+          app.
+
+          <ul>
+            <li>App Switcher</li>
+            <li>Account Switcher</li>
+            <li>Help & Logout</li>
+          </ul>
+        </p>
+
+        <hr />
+
+        <h3>Route Menu (middle) </h3>
+
+        <p>
+          This menu is concerned with the routes of the current application. When
+          collapsed, it shows the name (and icon) of the current route.
+        </p>
+
+        <hr />
+
+        <h3>App Menu (right) </h3>
+
+        <p>
+          This button could serve any number of application-specific needs.
+          Examples:
+
+          <ul>
+            <li><strong>Resourecs</strong>: Sidebar</li>
+            <li><strong>Check-ins</strong>: "Station Mode" button</li>
+            <li><strong>Other</strong>: List of context-specific actions</li>
+          </ul>
+        </p>
+
+        <hr />
+      </section>
+    </div>
   </div>
   );
-},
-handleClick: function () {
-  this.props.onSelectApp()
-}
-});
-
-var Topbar = React.createClass({
-  getInitialState: function () {
-    return {
-      AppMenuShown: false,
-      NavMenuShown: false,
-      OrgMenuShown: false
-    }
   },
 
-  render: function () {
-    return (
-    <div className="container">
-      <div className="topbar">
-        <div
-        className=  "org-topbar-btn"
-        onClick=    {this.handleOrgTopbarBtnClick}>
-        <i className="fa fa-lg fa-check-square-o"></i>
-      </div>
+  handleAppChange: function () {
+    this.setState({OrgMenuShown: false});
+  },
 
-      <div
-      className="nav-topbar-btn"
-      onClick=  {this.handleNavTopbarBtnClick}>
-      Events <i className="fa fa-sort-desc">
-      </i></div>
+  handleAppTopbarBtnClick: function () {
+    this.setState({AppMenuShown: !this.state.AppMenuShown});
+  },
 
-      <div
-      className="app-topbar-btn"
-      onClick=  {this.handleAppTopbarBtnClick}>
-      <i className="fa fa-lg fa-ellipsis-h"></i>
-    </div>
+  handleOrgTopbarBtnClick: function () {
+    this.setState({OrgMenuShown: !this.state.OrgMenuShown});
+  },
 
-    <AppTopbarMenu shown={this.state.AppMenuShown} />
-    <OrgTopbarMenu
-    shown={this.state.OrgMenuShown}
-    onSelectApp={this.handleAppChange} />
-    <NavTopbarMenu shown={this.state.NavMenuShown} />
+  handleNavTopbarBtnClick: function () {
+    this.setState({NavMenuShown: !this.state.NavMenuShown});
+  }
+  });
 
-    <section style={{
-      color: '#666',
-      marginTop: '0',
-      padding: '20px',
-      paddingTop: '70px'
-     }}>
-      <h3>Mobile Topbar Prototype</h3>
-      <p>
-        The goal of this prototype is to determine the 'shape' of the mobile
-        Topbar. Does this design cover the needs of our current and future
-        interfaces apps.
-      </p>
-      <p>
-        <em>(Interactions are all still very crude)</em>
-      </p>
+  React.initializeTouchEvents(true);
 
-      <hr />
-
-      <h3>Org/User Menu (left) </h3>
-
-      <p>
-        This menu is concerned with <strong>everything outside of the current
-        app context</strong>. When collapsed, it shows the icon of the current
-        app.
-
-        <ul>
-          <li>App Switcher</li>
-          <li>Account Switcher</li>
-          <li>Help & Logout</li>
-        </ul>
-      </p>
-
-      <hr />
-
-      <h3>Route Menu (middle) </h3>
-
-      <p>
-        This menu is concerned with the routes of the current application. When
-        collapsed, it shows the name (and icon) of the current route.
-      </p>
-
-      <hr />
-
-      <h3>App Menu (right) </h3>
-
-      <p>
-        This button could serve any number of application-specific needs.
-        Examples:
-
-        <ul>
-          <li><strong>Resourecs</strong>: Sidebar</li>
-          <li><strong>Check-ins</strong>: "Station Mode" button</li>
-          <li><strong>Other</strong>: List of context-specific actions</li>
-        </ul>
-      </p>
-
-      <hr />
-    </section>
-  </div>
-</div>
-);
-},
-
-handleAppChange: function () {
-  this.setState({OrgMenuShown: false});
-},
-
-handleAppTopbarBtnClick: function () {
-  this.setState({AppMenuShown: !this.state.AppMenuShown});
-},
-
-handleOrgTopbarBtnClick: function () {
-  this.setState({OrgMenuShown: !this.state.OrgMenuShown});
-},
-
-handleNavTopbarBtnClick: function () {
-  this.setState({NavMenuShown: !this.state.NavMenuShown});
-}
-});
-
-React.initializeTouchEvents(true);
-
-React.render(React.createElement(Topbar), document.body);
+  React.render(React.createElement(Topbar), document.body);
 </script>
 </body>
 </html>
