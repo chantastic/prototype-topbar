@@ -56,7 +56,35 @@
     }
   });
 
+  var OrgTopbarMenuApp = React.createClass({
+    propTypes: {
+      name: React.PropTypes.string.isRequired
+    },
+
+    render: function () {
+      return (
+        <div className="org-topbar-menu-item" onClick={this.handleClick}>
+          <i className="fa fa-lg fa-check-square-o"></i>{this.props.name}
+        </div>
+      );
+    },
+
+    handleClick: function () {
+      console.log('app clicked', this);
+    }
+  });
+
   var OrgTopbarMenu = React.createClass({
+    getInitialState: function () {
+      return {
+        apps: [
+          'check-ins',
+          'accounts',
+          'People',
+          'Registrations',
+        ]
+      };
+    },
     render: function () {
       return (
       <div
@@ -65,21 +93,9 @@
         'ease-out-quart':  true,
         'is-shown':        this.props.shown
       })}
-      style={{cursor: 'pointer'}}
-      onClick={this.handleClick}>
+      style={{cursor: 'pointer'}}>
       <section>
-        <div className="org-topbar-menu-item">
-          <i className="fa fa-lg fa-check-square-o"></i> Check-ins
-        </div>
-        <div className="org-topbar-menu-item">
-          <i className="fa fa-lg fa-check-square-o"></i> Accounts
-        </div>
-        <div className="org-topbar-menu-item">
-          <i className="fa fa-lg fa-check-square-o"></i> People
-        </div>
-        <div className="org-topbar-menu-item">
-          <i className="fa fa-lg fa-check-square-o"></i> Registrations
-        </div>
+        {this.renderApps()}
       </section>
 
       <section style={{ borderTop: '1px solid #333' }}>
@@ -94,8 +110,16 @@
     </div>
     );
   },
-  handleClick: function () {
-    this.props.onSelectApp()
+
+  renderApps: function () {
+    return this.state.apps.map(function (appName) {
+      return <OrgTopbarMenuApp name={appName} />
+   });
+  },
+
+  handleAppClick: function () {
+    // this.props.onSelectApp()
+    console.log('app clicked');
   }
   });
 
