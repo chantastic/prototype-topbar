@@ -16,14 +16,9 @@
   href="//chantastic.s3.amazonaws.com/ease.0.1.0.css"
   rel="stylesheet">
 
-  <link
-   href="./css/styles.css"
-   rel="stylesheet">
-
 </head>
 <body>
-  <script src="http://fb.me/react-with-addons-0.12.1.js"></script>
-  <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+  <script type="text/javascript" src="./bundle.js" charset="utf-8"></script>
   <script type="text/jsx">
     var AppTopbarMenu = React.createClass({
       render: function () {
@@ -123,126 +118,6 @@
   }
   });
 
-  var Topbar = React.createClass({
-    getInitialState: function () {
-      return {
-        AppMenuShown: false,
-        NavMenuShown: false,
-        OrgMenuShown: false
-      }
-    },
-
-    render: function () {
-      return (
-      <div className="container">
-        <div className="topbar">
-          <div
-          className=  "org-topbar-btn"
-          onClick=    {this.handleOrgTopbarBtnClick}>
-          <i className="fa fa-lg fa-check-square-o"></i>
-        </div>
-
-        <div
-        className="nav-topbar-btn"
-        onClick=  {this.handleNavTopbarBtnClick}>
-        Events <i className="fa fa-sort-desc">
-        </i></div>
-
-        <div
-        className="app-topbar-btn"
-        onClick=  {this.handleAppTopbarBtnClick}>
-        <i className="fa fa-lg fa-ellipsis-h"></i>
-      </div>
-
-      <AppTopbarMenu shown={this.state.AppMenuShown} />
-      <OrgTopbarMenu
-      shown={this.state.OrgMenuShown}
-      onSelectApp={this.handleAppChange} />
-      <NavTopbarMenu shown={this.state.NavMenuShown} />
-
-      <section style={{
-        color: '#666',
-        marginTop: '0',
-        padding: '20px',
-        paddingTop: '70px'
-      }}>
-        <h3>Mobile Topbar Prototype</h3>
-        <p>
-          The goal of this prototype is to determine the 'shape' of the mobile
-          Topbar. Does this design cover the needs of our current and future
-          interfaces apps.
-        </p>
-        <p>
-          <em>(Interactions are all still very crude)</em>
-        </p>
-
-        <hr />
-
-        <h3>Org/User Menu (left) </h3>
-
-        <p>
-          This menu is concerned with <strong>everything outside of the current
-          app context</strong>. When collapsed, it shows the icon of the current
-          app.
-
-          <ul>
-            <li>App Switcher</li>
-            <li>Account Switcher</li>
-            <li>Help & Logout</li>
-          </ul>
-        </p>
-
-        <hr />
-
-        <h3>Route Menu (middle) </h3>
-
-        <p>
-          This menu is concerned with the routes of the current application. When
-          collapsed, it shows the name (and icon) of the current route.
-        </p>
-
-        <hr />
-
-        <h3>App Menu (right) </h3>
-
-        <p>
-          This button could serve any number of application-specific needs.
-          Examples:
-
-          <ul>
-            <li><strong>Resourecs</strong>: Sidebar</li>
-            <li><strong>Check-ins</strong>: "Station Mode" button</li>
-            <li><strong>Other</strong>: List of context-specific actions</li>
-          </ul>
-        </p>
-
-        <hr />
-      </section>
-    </div>
-  </div>
-  );
-  },
-
-  handleAppChange: function () {
-    this.setState({OrgMenuShown: false});
-  },
-
-  handleAppTopbarBtnClick: function () {
-    this.setState({AppMenuShown: !this.state.AppMenuShown});
-  },
-
-  handleOrgTopbarBtnClick: function () {
-    this.setState({OrgMenuShown: !this.state.OrgMenuShown});
-  },
-
-  handleNavTopbarBtnClick: function () {
-    this.setState({NavMenuShown: !this.state.NavMenuShown});
-  }
-  });
-
-  React.initializeTouchEvents(true);
-
-  React.render(React.createElement(Topbar), document.body);
 </script>
 </body>
 </html>

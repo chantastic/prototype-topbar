@@ -1,0 +1,188 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/opt/nvm/v0.10.33/bin/node',
+1 verbose cli   '/usr/local/opt/nvm/v0.10.33/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'css-loader',
+1 verbose cli   'style-lader' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/local/opt/nvm/v0.10.33/bin/node
+5 warn package.json topbar@0.0.2 No description
+6 warn package.json topbar@0.0.2 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'css-loader', null ]
+9 verbose cache add name=undefined spec="css-loader" args=["css-loader",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'css-loader',
+10 verbose parsed url   path: 'css-loader',
+10 verbose parsed url   href: 'css-loader' }
+11 verbose cache add [ 'style-lader', null ]
+12 verbose cache add name=undefined spec="style-lader" args=["style-lader",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'style-lader',
+13 verbose parsed url   path: 'style-lader',
+13 verbose parsed url   href: 'style-lader' }
+14 silly lockFile e4f9ed04-css-loader css-loader
+15 verbose lock css-loader /Users/chan/.npm/e4f9ed04-css-loader.lock
+16 silly lockFile 0be82170-style-lader style-lader
+17 verbose lock style-lader /Users/chan/.npm/0be82170-style-lader.lock
+18 silly lockFile e4f9ed04-css-loader css-loader
+19 silly lockFile e4f9ed04-css-loader css-loader
+20 silly lockFile 0be82170-style-lader style-lader
+21 silly lockFile 0be82170-style-lader style-lader
+22 verbose addNamed [ 'css-loader', '' ]
+23 verbose addNamed [ null, '*' ]
+24 silly lockFile fd58fa82-css-loader css-loader@
+25 verbose lock css-loader@ /Users/chan/.npm/fd58fa82-css-loader.lock
+26 verbose addNamed [ 'style-lader', '' ]
+27 verbose addNamed [ null, '*' ]
+28 silly lockFile 62b95735-style-lader style-lader@
+29 verbose lock style-lader@ /Users/chan/.npm/62b95735-style-lader.lock
+30 silly addNameRange { name: 'css-loader', range: '*', hasData: false }
+31 silly addNameRange { name: 'style-lader', range: '*', hasData: false }
+32 verbose request where is /css-loader
+33 verbose request registry https://registry.npmjs.org/
+34 verbose request id cfb909bd14cf34c6
+35 verbose url raw /css-loader
+36 verbose url resolving [ 'https://registry.npmjs.org/', './css-loader' ]
+37 verbose url resolved https://registry.npmjs.org/css-loader
+38 verbose request where is https://registry.npmjs.org/css-loader
+39 info trying registry request attempt 1 at 13:34:46
+40 http GET https://registry.npmjs.org/css-loader
+41 verbose request where is /style-lader
+42 verbose request registry https://registry.npmjs.org/
+43 verbose url raw /style-lader
+44 verbose url resolving [ 'https://registry.npmjs.org/', './style-lader' ]
+45 verbose url resolved https://registry.npmjs.org/style-lader
+46 verbose request where is https://registry.npmjs.org/style-lader
+47 info trying registry request attempt 1 at 13:34:46
+48 http GET https://registry.npmjs.org/style-lader
+49 http 200 https://registry.npmjs.org/css-loader
+50 silly registry.get cb [ 200,
+50 silly registry.get   { date: 'Wed, 17 Dec 2014 21:34:47 GMT',
+50 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+50 silly registry.get     etag: '"BR01EC95RY386GNDUWAM8W8JF"',
+50 silly registry.get     'content-type': 'application/json',
+50 silly registry.get     'cache-control': 'max-age=60',
+50 silly registry.get     'content-length': '28909',
+50 silly registry.get     'accept-ranges': 'bytes',
+50 silly registry.get     via: '1.1 varnish',
+50 silly registry.get     age: '16',
+50 silly registry.get     'x-served-by': 'cache-lax1425-LAX',
+50 silly registry.get     'x-cache': 'HIT',
+50 silly registry.get     'x-cache-hits': '1',
+50 silly registry.get     'x-timer': 'S1418852087.122924,VS0,VE0',
+50 silly registry.get     vary: 'Accept',
+50 silly registry.get     'keep-alive': 'timeout=10, max=50',
+50 silly registry.get     connection: 'Keep-Alive' } ]
+51 http 404 https://registry.npmjs.org/style-lader
+52 verbose headers { date: 'Wed, 17 Dec 2014 21:34:47 GMT',
+52 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+52 verbose headers   'content-type': 'application/json',
+52 verbose headers   'cache-control': 'max-age=0',
+52 verbose headers   'content-length': '52',
+52 verbose headers   'accept-ranges': 'bytes',
+52 verbose headers   via: '1.1 varnish',
+52 verbose headers   age: '0',
+52 verbose headers   'x-served-by': 'cache-lax1428-LAX',
+52 verbose headers   'x-cache': 'MISS',
+52 verbose headers   'x-cache-hits': '0',
+52 verbose headers   'x-timer': 'S1418852087.122696,VS0,VE41',
+52 verbose headers   'keep-alive': 'timeout=10, max=50',
+52 verbose headers   connection: 'Keep-Alive' }
+53 silly registry.get cb [ 404,
+53 silly registry.get   { date: 'Wed, 17 Dec 2014 21:34:47 GMT',
+53 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+53 silly registry.get     'content-type': 'application/json',
+53 silly registry.get     'cache-control': 'max-age=0',
+53 silly registry.get     'content-length': '52',
+53 silly registry.get     'accept-ranges': 'bytes',
+53 silly registry.get     via: '1.1 varnish',
+53 silly registry.get     age: '0',
+53 silly registry.get     'x-served-by': 'cache-lax1428-LAX',
+53 silly registry.get     'x-cache': 'MISS',
+53 silly registry.get     'x-cache-hits': '0',
+53 silly registry.get     'x-timer': 'S1418852087.122696,VS0,VE41',
+53 silly registry.get     'keep-alive': 'timeout=10, max=50',
+53 silly registry.get     connection: 'Keep-Alive' } ]
+54 silly lockFile 62b95735-style-lader style-lader@
+55 silly lockFile 62b95735-style-lader style-lader@
+56 silly addNameRange number 2 { name: 'css-loader', range: '*', hasData: true }
+57 silly addNameRange versions [ 'css-loader',
+57 silly addNameRange   [ '0.1.0',
+57 silly addNameRange     '0.1.1',
+57 silly addNameRange     '0.1.2',
+57 silly addNameRange     '0.2.0',
+57 silly addNameRange     '0.2.1',
+57 silly addNameRange     '0.2.2',
+57 silly addNameRange     '0.2.3',
+57 silly addNameRange     '0.2.4',
+57 silly addNameRange     '0.5.0',
+57 silly addNameRange     '0.5.1',
+57 silly addNameRange     '0.5.2',
+57 silly addNameRange     '0.6.0',
+57 silly addNameRange     '0.6.1',
+57 silly addNameRange     '0.6.2',
+57 silly addNameRange     '0.6.3',
+57 silly addNameRange     '0.6.4',
+57 silly addNameRange     '0.6.5',
+57 silly addNameRange     '0.6.6',
+57 silly addNameRange     '0.6.7',
+57 silly addNameRange     '0.6.8',
+57 silly addNameRange     '0.6.9',
+57 silly addNameRange     '0.6.10',
+57 silly addNameRange     '0.6.11',
+57 silly addNameRange     '0.6.12',
+57 silly addNameRange     '0.7.0',
+57 silly addNameRange     '0.7.1',
+57 silly addNameRange     '0.8.0',
+57 silly addNameRange     '0.9.0' ] ]
+58 verbose addNamed [ 'css-loader', '0.9.0' ]
+59 verbose addNamed [ '0.9.0', '0.9.0' ]
+60 silly lockFile 3e395507-css-loader-0-9-0 css-loader@0.9.0
+61 verbose lock css-loader@0.9.0 /Users/chan/.npm/3e395507-css-loader-0-9-0.lock
+62 silly lockFile 427991a5--css-loader-css-loader-0-9-0-tgz https://registry.npmjs.org/css-loader/-/css-loader-0.9.0.tgz
+63 verbose lock https://registry.npmjs.org/css-loader/-/css-loader-0.9.0.tgz /Users/chan/.npm/427991a5--css-loader-css-loader-0-9-0-tgz.lock
+64 verbose addRemoteTarball [ 'https://registry.npmjs.org/css-loader/-/css-loader-0.9.0.tgz',
+64 verbose addRemoteTarball   '079849c253c0a6a9fc8cdeea7d41eab12195a7a8' ]
+65 info retry fetch attempt 1 at 13:34:47
+66 verbose fetch to= /var/folders/ss/80xw47y1605dp93lwg0dwd0h0000gn/T/npm-4966-Gwt5tWFY/registry.npmjs.org/css-loader/-/css-loader-0.9.0.tgz
+67 http GET https://registry.npmjs.org/css-loader/-/css-loader-0.9.0.tgz
+68 http 200 https://registry.npmjs.org/css-loader/-/css-loader-0.9.0.tgz
+69 silly lockFile 427991a5--css-loader-css-loader-0-9-0-tgz https://registry.npmjs.org/css-loader/-/css-loader-0.9.0.tgz
+70 silly lockFile 427991a5--css-loader-css-loader-0-9-0-tgz https://registry.npmjs.org/css-loader/-/css-loader-0.9.0.tgz
+71 silly lockFile 3e395507-css-loader-0-9-0 css-loader@0.9.0
+72 silly lockFile 3e395507-css-loader-0-9-0 css-loader@0.9.0
+73 silly lockFile fd58fa82-css-loader css-loader@
+74 silly lockFile fd58fa82-css-loader css-loader@
+75 error 404 404 Not Found: style-lader
+75 error 404
+75 error 404 'style-lader' is not in the npm registry.
+75 error 404 You should bug the author to publish it
+75 error 404 It was specified as a dependency of 'topbar'
+75 error 404
+75 error 404 Note that you can also install from a
+75 error 404 tarball, folder, or http url, or git url.
+76 error System Darwin 14.0.0
+77 error command "/usr/local/opt/nvm/v0.10.33/bin/node" "/usr/local/opt/nvm/v0.10.33/bin/npm" "install" "css-loader" "style-lader"
+78 error cwd /Users/chan/projects/topbar
+79 error node -v v0.10.33
+80 error npm -v 1.4.28
+81 error code E404
+82 verbose exit [ 1, true ]

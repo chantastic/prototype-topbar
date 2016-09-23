@@ -1,0 +1,28 @@
+{
+  "name": "topbar",
+  "version": "0.0.2",
+  "description": "",
+  "main": "entry.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chantastic/topbar.git"
+  },
+  "author": "Michael Chan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chantastic/topbar/issues"
+  },
+  "homepage": "https://github.com/chantastic/topbar",
+  "devDependencies": {
+    "css-loader": "^0.9.0",
+    "es6-loader": "^0.2.0",
+    "flux": "^2.0.1",
+    "immutable": "^3.4.0",
+    "jsx-loader": "^0.12.2",
+    "react": "^0.12.1",
+    "style-loader": "^0.8.2"
+  }
+}
